@@ -1,9 +1,14 @@
-import Image from 'next/image'
+import { Actions, Contact, Features, Footer, Header, Hero } from '@/sections';
 
 export default function Home() {
   return (
     <main className="">
-    <h1 className=''>Home</h1>
+      <Header />
+      <Hero />
+      <Actions />
+      <Features />
+      <Contact />
+      <Footer />
     </main>
-  )
+  );
 }
