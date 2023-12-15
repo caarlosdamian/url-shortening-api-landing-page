@@ -18,6 +18,10 @@ const config: Config = {
           blueGreen: '#2BD0D0',
         },
       },
+      gridTemplateColumns: {
+        desktop: 'minmax(15px, 165px) 1fr minmax(15px, 165px)',
+        mobile: 'minmax(15px, 24px) 1fr minmax(15px, 24px)',
+      },
       backgroundImage: {},
     },
   },

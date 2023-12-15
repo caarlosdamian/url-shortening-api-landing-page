@@ -4,7 +4,7 @@ import hamburger from '../../images/hamburger.svg';
 
 export const Header = () => {
   return (
-    <div className="flex justify-between w-full px-6 pb-6 pt-10">
+    <div className="flex justify-between w-full px-6 pb-6 pt-10 col-start-2 col-end-3">
       <div className="">
         <Image
           src={logo}

@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='col-start-2 col-end-3'>Footer</div>
   )
 }

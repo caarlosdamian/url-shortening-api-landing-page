@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Actions = () => {
   return (
-    <div>Actions</div>
+    <section className='col-start-2 col-end-3'>Actions</section>
   )
 }

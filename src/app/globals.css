@@ -20,7 +20,11 @@
     }
 
     .h3-semibold {
-        @apply text-[20px] font-semibold leading-[24.8px];
+        @apply text-lg font-semibold leading-[24.8px];
+    }
+
+    .h3-medium {
+        @apply text-lg font-medium leading-[30px];
     }
 
     .base {
@@ -79,3 +83,7 @@
         @apply text-[10px] font-normal leading-[13px];
     }
 }
+
+.grid-cols-minmax {
+    grid-template-columns: minmax(15px, 165px) 1fr minmax(15px, 165px);
+  }
