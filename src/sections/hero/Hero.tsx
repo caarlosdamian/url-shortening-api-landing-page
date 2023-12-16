@@ -1,4 +1,4 @@
-import { ResponsiveImg } from '@/components';
+import { Button, ResponsiveImg } from '@/components';
 import Working from '../../images/illustration-working.svg';
 import React from 'react';
 import Image from 'next/image';
@@ -14,15 +14,16 @@ export const Hero = () => {
         alt="working"
         className="absolute object-contain top-[-120px] right-[-150px] min-w-[510px] h-full  sm:top-0 sm:right-[-200px] lg:min-w-[733px]"
       />
-      <div className="flex items-center justify-center flex-col gap-4 sm:px-0 sm:items-start sm:max-w-[350px] lg:max-w-[563px]">
+      <div className="flex items-center justify-center flex-col gap-4 sm:px-0 sm:items-start sm:max-w-[350px] lg:max-w-[600px]">
         <h1 className="text-[42px] font-bold leading-[48px] tracking-[-1.05px] text-primary-onyx text-center sm:text-start lg:text-[80px] lg:leading-[90px] lg:tracking-[-2px]">
           More than just shorter links
         </h1>
-        <h3 className="h3-medium text-primary-manate text-center sm:text-start">
+        <h3 className="h3-medium text-primary-manate text-center sm:text-start sm:text-[22px]">
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </h3>
-        <button>Get Started</button>
+        <button></button>
+        <Button label="Get Started" buttonType='rounded'/>
       </div>
     </section>
   );
