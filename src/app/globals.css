@@ -91,6 +91,10 @@
         @apply rounded-[28px] text-xl pt-[14px] pb-3 px-10 w-fit;
     }
 
+    .btn-rounded-sm {
+        @apply rounded-[28px] px-6 w-fit;
+    }
+
     .btn-md {
         @apply text-lg pt-[11px] pb-[10px];
     }
