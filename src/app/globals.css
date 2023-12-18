@@ -16,7 +16,7 @@
     }
 
     .h3-bold {
-        @apply text-[20px] font-bold leading-normal;
+        @apply text-[28px] font-bold leading-[48px];
     }
 
     .h3-semibold {

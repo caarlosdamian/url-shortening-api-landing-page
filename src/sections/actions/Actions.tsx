@@ -20,12 +20,25 @@ export const Actions = () => {
             alt="test"
             width={0}
             height={0}
-            className="absolute z-0 w-full h-full  right-[-100px] top-[-40px]"
+            className="absolute sm:hidden z-0 w-full h-full  right-[-100px] top-[-40px]"
+          />
+          <Image
+            src="/images/bg-shorten-desktop.svg"
+            alt="test"
+            width={0}
+            height={0}
+            className="hidden sm:inline sm:absolute z-0 w-full h-full right-0 top-0"
           />
         </div>
       </div>
-      <div className=""></div>
-      <div className=""></div>
+      <div className="w-full pt-[128px] flex flex-col gap-12 break-words px-6">
+        <div className="bg-blue-500 h-10"></div>
+        <div className="flex flex-col gap-4 h-full">
+          <h3 className='h3-bold text-primary-onyx text-center'>Advanced Statistics</h3>
+          <h4 className='text-center text-[16px] font-medium text-primary-manate leading-[28px] tracking-[0.109px]'>Track how your links are performing across the web with our advanced statistics dashboard.</h4>
+        </div>
+        <div className="bg-pink-500 h-10"></div>
+      </div>
     </section>
   );
 };
