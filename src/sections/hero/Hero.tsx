@@ -13,7 +13,7 @@ export const Hero = () => {
         alt="working"
         width={0}
         height={0}
-        className="absolute object-contain top-[-150px] right-[-150px] min-w-[510px] h-full sm:right-0 sm:top-[-180px] lg:top-0 lg:right-[-380px] lg:min-w-[733px]"
+        className="absolute object-contain top-[-150px] right-[-150px] min-w-[510px] h-full sm:right-0 sm:top-[-180px] lg:top-[-132px] lg:right-[-335px] lg:min-w-[733px]"
       />
       <div className="flex items-center justify-center flex-col gap-4 sm:px-0 sm:items-start sm:max-w-[350px] lg:max-w-[600px]">
         <h1 className="text-[42px] font-bold leading-[48px] tracking-[-1.05px] text-primary-onyx text-center sm:text-start lg:text-[80px] lg:leading-[90px] lg:tracking-[-2px]">
