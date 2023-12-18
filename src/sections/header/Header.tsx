@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import logo from '../../images/logo.svg';
-import hamburger from '../../images/hamburger.svg';
 import { navLinks } from '@/constants';
 import { Button } from '@/components';
 
@@ -9,7 +7,7 @@ export const Header = () => {
     <div className="flex justify-between w-full pb-6 pt-10 col-start-2 col-end-3 lg:pb-20">
       <div className="lg:flex gap-11 lg:items-center">
         <Image
-          src={logo}
+          src='/images/logo.svg'
           width={120}
           height={32}
           alt="logo"
@@ -28,7 +26,7 @@ export const Header = () => {
       </div>
       <div className="lg:flex lg:gap-9 lg:items-center">
         <Image
-          src={hamburger}
+          src='/images/hamburger.svg'
           width={24}
           height={21}
           alt="hamburger"
