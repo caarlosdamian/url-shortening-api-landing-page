@@ -17,7 +17,11 @@ const config: Config = {
           manate: '#9E9AA8',
           flashWhite: '#EFF1F7',
           blueGreen: '#2BD0D0',
+          blueGreenLight: '#9AE3E3',
         },
+      },
+      borderRadius:{
+        smXl: '5px'
       },
       gridTemplateColumns: {
         desktop: 'minmax(15px, 165px) 1fr minmax(15px, 165px)',
