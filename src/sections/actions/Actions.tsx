@@ -1,12 +1,12 @@
-import { Button, Card, Input } from '@/components';
-import { sampleLinks } from '@/constants';
+import { Button, Card, Feature, Input } from '@/components';
+import { sampleFeature, sampleLinks } from '@/constants';
 import { Link } from '@/constants/types';
 import Image from 'next/image';
 import React from 'react';
 
 export const Actions = () => {
   return (
-    <section className="col-start-1 col-end-4 bg-primary-flashWhite min-h-screen mt-40 lg:mt-0">
+    <section className="col-start-1 col-end-4 pb-20 bg-primary-flashWhite min-h-screen mt-40 lg:mt-0">
       <div className="relative">
         <div className="absolute rounded-[10px] bg-no-repeat top-[-80px] left-0 right-0 mx-auto flex flex-col gap-4 bg-primary-jacarta w-[327px] h-[160px] overflow-hidden p-6 sm:w-full sm:max-w-[1110px] sm:flex-row sm:items-center">
           <Input
@@ -48,7 +48,11 @@ export const Actions = () => {
             statistics dashboard.
           </h4>
         </div>
-        <div className="bg-pink-500 h-10"></div>
+        <div className="flex flex-col gap-12">
+          {sampleFeature.map((item)=>(
+            <Feature key={item.id} feature={item} />
+          ))}
+        </div>
       </div>
     </section>
   );
