@@ -1,4 +1,6 @@
-import { Button, Input } from '@/components';
+import { Button, Card, Input } from '@/components';
+import { sampleLinks } from '@/constants';
+import { Link } from '@/constants/types';
 import Image from 'next/image';
 import React from 'react';
 
@@ -32,10 +34,19 @@ export const Actions = () => {
         </div>
       </div>
       <div className="w-full pt-[128px] flex flex-col gap-12 break-words px-6">
-        <div className="bg-blue-500 h-10"></div>
+        <div className="flex flex-col gap-6">
+          {sampleLinks.map((link: Link) => (
+            <Card key={link.id} {...link} />
+          ))}
+        </div>
         <div className="flex flex-col gap-4 h-full">
-          <h3 className='h3-bold text-primary-onyx text-center'>Advanced Statistics</h3>
-          <h4 className='text-center text-[16px] font-medium text-primary-manate leading-[28px] tracking-[0.109px]'>Track how your links are performing across the web with our advanced statistics dashboard.</h4>
+          <h3 className="h3-bold text-primary-onyx text-center">
+            Advanced Statistics
+          </h3>
+          <h4 className="text-center text-[16px] font-medium text-primary-manate leading-[28px] tracking-[0.109px]">
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </h4>
         </div>
         <div className="bg-pink-500 h-10"></div>
       </div>
