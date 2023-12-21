@@ -9,4 +9,6 @@ export type FeatureType = {
   id: string;
   title: string;
   desc: string;
+  img:string
+  extraBorder?:boolean
 };
