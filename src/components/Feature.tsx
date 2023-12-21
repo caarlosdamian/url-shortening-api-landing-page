@@ -7,15 +7,27 @@ interface Props {
 }
 
 export const Feature = ({ feature }: Props) => {
+  console.log(feature);
   return (
-    <div className="bg-white pt-[77px] px-8 pb-[41px] relative text-center flex flex-col gap-3 rounded-smXl">
+    <div
+      className={`bg-white pt-[77px] px-8 pb-[41px] relative text-center flex flex-col gap-3 rounded-smXl md:w-[350px] md:h-[267px]
+      ${
+        feature.id === '2c'
+          ? 'md:mt-[44px]'
+          : feature.id === '3c'
+          ? 'md:mt-[88px]'
+          : ''
+      }
+      
+      `}
+    >
       {feature.extraBorder && (
         <>
-          <div className="absolute top-[-92px] right-[160px] h-12 w-2 bg-primary-blueGreen"></div>
-          <div className="absolute bottom-[-48px] right-[160px] h-12 w-2 bg-primary-blueGreen"></div>
+          <div className="absolute top-[-92px] right-[160px] h-12 w-2 bg-primary-blueGreen md:w-[30px] md:h-2 md:top-[108px] md:left-[-30px]"></div>
+          <div className="absolute bottom-[-48px] right-[160px] h-12 w-2 bg-primary-blueGreen md:w-[30px] md:h-2 md:top-[108px] md:right-[-30px]"></div>
         </>
       )}
-      <div className="absolute flex items-center p-5 justify-center top-[-44px] h-[88px] w-[88px right-[120px] bg-primary-jacarta rounded-full">
+      <div className="absolute flex items-center p-5 justify-center top-[-44px] h-[88px] w-[88px] right-[120px] bg-primary-jacarta rounded-full md:left-8">
         <Image
           src={feature.img}
           alt={feature.title}

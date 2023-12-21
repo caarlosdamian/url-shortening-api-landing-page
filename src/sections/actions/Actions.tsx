@@ -8,7 +8,7 @@ import React from 'react';
 
 export const Actions = () => {
   return (
-    <section className="col-start-1 col-end-4 pb-20 bg-primary-flashWhite min-h-screen mt-40 lg:mt-0">
+    <section className="col-start-1 col-end-4 pb-20 bg-primary-flashWhite min-h-screen mt-40 lg:mt-0 md:px-[165px] lg:pb-32">
       <div className="relative">
         <form className="absolute rounded-[10px] bg-no-repeat top-[-80px] left-0 right-0 mx-auto flex flex-col gap-4 bg-primary-jacarta w-[327px] min-h-[160px] overflow-hidden p-6 sm:w-full sm:max-w-[1110px] sm:flex-row sm:items-center">
           <Input
@@ -36,22 +36,22 @@ export const Actions = () => {
           />
         </form>
       </div>
-      <div className="w-full pt-[128px] flex flex-col gap-12 break-words px-6">
-        <div className="flex flex-col gap-6">
+      <div className="w-full pt-[128px] flex flex-col gap-12 break-words px-6 md:gap-32 md:items-center">
+        <div className="flex flex-col gap-6 w-full">
           {sampleLinks.map((link: Link) => (
             <Card key={link.id} {...link} />
           ))}
         </div>
-        <div className="flex flex-col gap-4 h-full">
-          <h3 className="h3-bold text-primary-onyx text-center">
+        <div className="flex flex-col gap-4 h-full md:max-w-[540px]">
+          <h3 className="h3-bold text-primary-onyx text-center md:text-[40px] leading-[48px]">
             Advanced Statistics
           </h3>
-          <h4 className="text-center text-[16px] font-medium text-primary-manate leading-[28px] tracking-[0.109px]">
+          <h4 className="text-center text-[16px] font-medium text-primary-manate leading-[28px] tracking-[0.109px] md:text-lg md:max-[540px]">
             Track how your links are performing across the web with our advanced
             statistics dashboard.
           </h4>
         </div>
-        <div className="flex flex-col gap-[92px] mt-[44px]">
+        <div className="flex flex-col gap-[92px] mt-[44px] md:flex-row md:gap-[30px]">
           {sampleFeature.map((item) => (
             <Feature key={item.id} feature={item} />
           ))}
