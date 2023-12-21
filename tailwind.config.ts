@@ -29,8 +29,10 @@ const config: Config = {
       },
       backgroundImage: {
         card: "url('/images/bg-boost-mobile.svg')",
-        cardDesktop: "url('/images/bg-boost-desktop.svg')",
-        cardMobile: "url('/images/bg-shorten-mobile.svg')"
+        cardDesktop: "url('/images/bg-shorten-desktop.svg')",
+        cardMobile: "url('/images/bg-shorten-mobile.svg')",
+        boostDesktop: "url('/images/bg-boost-desktop.svg')",
+        boostMobile: "url('/images/bg-boost-mobile.svg')"
       },
     },
   },
