@@ -8,7 +8,7 @@ import React from 'react';
 
 export const Actions = () => {
   return (
-    <section className="col-start-1 col-end-4 pb-20 bg-primary-flashWhite min-h-screen mt-40 lg:mt-0 md:px-[165px] lg:pb-32">
+    <section className="col-start-1 col-end-4 pb-20 bg-primary-flashWhite min-h-screen mt-40 lg:mt-0 md:px-[165px] lg:pb-32 md:max-h-fit">
       <div className="relative">
         <form className="absolute rounded-[10px] bg-no-repeat top-[-80px] left-0 right-0 mx-auto flex flex-col gap-4 bg-primary-jacarta w-[327px] min-h-[160px] overflow-hidden p-6 sm:w-full sm:max-w-[1110px] sm:flex-row sm:items-center">
           <Input

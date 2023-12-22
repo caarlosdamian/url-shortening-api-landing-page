@@ -1,4 +1,4 @@
-import { FeatureType, Link } from './types';
+import { FeatureType, FooterLinkType, Link } from './types';
 
 export const navLinks = [
   {
@@ -49,5 +49,89 @@ export const sampleFeature: FeatureType[] = [
     title: 'Fully Customizable',
     desc: 'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.',
     img: '/images/icon-fully-customizable.svg',
+  },
+];
+
+export const footerLinks: FooterLinkType[] = [
+  {
+    id: '1d',
+    title: 'Features',
+    links: [
+      {
+        id: '1d-a',
+        title: 'Link Shortening',
+      },
+      {
+        id: '1d-b',
+        title: 'Branded Links',
+      },
+      {
+        id: '1d-c',
+        title: 'Analytics',
+      },
+    ],
+  },
+  {
+    id: '2d',
+    title: 'Resources',
+    links: [
+      {
+        id: '2d-a',
+        title: 'Blog',
+      },
+      {
+        id: '2d-b',
+        title: 'Developers',
+      },
+      {
+        id: '2d-c',
+        title: 'Support',
+      },
+    ],
+  },
+  {
+    id: '3d',
+    title: 'Company',
+    links: [
+      {
+        id: '3d-a',
+        title: 'About',
+      },
+      {
+        id: '3d-b',
+        title: 'Our Team',
+      },
+      {
+        id: '3d-c',
+        title: 'Careers',
+      },
+      {
+        id: '3d-d',
+        title: 'Contact',
+      },
+    ],
+  },
+];
+
+export const footerSocials = [
+  {
+    id: '4a',
+    image: '/images/icon-facebook.svg',
+    alt: 'facebook',
+  },
+  {
+    id: '4b',
+    image: '/images/icon-twitter.svg',
+    alt: 'twitter',
+  },
+  {
+    id: '4c',
+    image: '/images/icon-pinterest.svg',
+    alt: 'pinterest',
+  },
+  {
+    id: '4d',
+    image: '/images/icon-instagram.svg',
+    alt: 'instagram',
   },
 ];

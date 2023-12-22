@@ -9,6 +9,12 @@ export type FeatureType = {
   id: string;
   title: string;
   desc: string;
-  img:string
-  extraBorder?:boolean
+  img: string;
+  extraBorder?: boolean;
+};
+
+export type FooterLinkType = {
+  id: string;
+  title: string;
+  links: { id: string; title: string }[];
 };
