@@ -42,7 +42,10 @@ export const Actions = () => {
             <Card key={link.id} {...link} />
           ))}
         </div>
-        <div className="flex flex-col gap-4 h-full md:max-w-[540px]">
+        <section
+          id="Features"
+          className="flex flex-col gap-4 h-full md:max-w-[540px]"
+        >
           <h3 className="h3-bold text-primary-onyx text-center md:text-[40px] leading-[48px]">
             Advanced Statistics
           </h3>
@@ -50,7 +53,7 @@ export const Actions = () => {
             Track how your links are performing across the web with our advanced
             statistics dashboard.
           </h4>
-        </div>
+        </section>
         <div className="flex flex-col gap-[92px] mt-[44px] md:flex-row md:gap-[30px]">
           {sampleFeature.map((item) => (
             <Feature key={item.id} feature={item} />

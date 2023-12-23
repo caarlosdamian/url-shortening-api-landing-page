@@ -5,9 +5,9 @@ import { Button } from '@/components';
 import { useMenuContext } from '@/hooks/useMenuContext';
 
 export const Header = () => {
-  const { handleOpen } = useMenuContext();
+  const { handleOpen, isOpen, handleClosed } = useMenuContext();
   return (
-    <div className="flex justify-between w-full pb-6 pt-10 col-start-2 col-end-3 lg:pb-20 z-40">
+    <div className="flex justify-between w-full pb-6 pt-10 col-start-2 col-end-3 lg:pb-20 z-10">
       <div className="lg:flex gap-11 lg:items-center">
         <Image
           src="/images/logo.svg"
@@ -29,7 +29,9 @@ export const Header = () => {
       </div>
       <div
         className="lg:flex lg:gap-9 lg:items-center"
-        onClick={handleOpen as () => void}
+        onClick={
+          isOpen ? (handleClosed as () => void) : (handleOpen as () => void)
+        }
       >
         <Image
           src="/images/hamburger.svg"
