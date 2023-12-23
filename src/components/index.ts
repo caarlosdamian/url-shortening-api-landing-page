@@ -1,3 +1,4 @@
+export { Menu } from './Menu';
 export { FooterLinkSection } from './FooterLinkSection';
 export { Card } from './Card';
 export { Input } from './Input';
