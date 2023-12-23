@@ -7,7 +7,6 @@ interface Props {
 }
 
 export const Feature = ({ feature }: Props) => {
-  console.log(feature);
   return (
     <div
       className={`bg-white pt-[77px] px-8 pb-[41px] relative text-center flex flex-col gap-3 rounded-smXl md:w-[350px] md:h-[267px]

@@ -1,10 +1,17 @@
+'use client';
 import { navLinks } from '@/constants';
 import React from 'react';
 import { Button } from '.';
+import { useMenuContext } from '@/hooks/useMenuContext';
 
 export const Menu = () => {
+  const { isOpen } = useMenuContext();
   return (
-    <div className="flex flex-col gap-8 bg-primary-jacarta h-[383px] w-[327px] fixed top-[96px] left-0 right-0 mx-auto z-50 rounded-[10px] py-10 px-6">
+    <div
+      className={`${
+        isOpen ? 'flex' : 'hidden'
+      }  flex-col gap-8 bg-primary-jacarta h-[383px] w-[327px] fixed top-[96px] left-0 right-0 mx-auto z-50 rounded-[10px] py-10 px-6`}
+    >
       <div className="flex flex-col items-center gap-[30px]">
         {navLinks.map((link) => (
           <span
