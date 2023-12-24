@@ -2,18 +2,32 @@
 import { Button, Card, Feature, Input } from '@/components';
 import { sampleFeature, sampleLinks } from '@/constants';
 import { Link } from '@/constants/types';
+import { useFetch } from '@/hooks/useFetch';
+import { useForm } from '@/hooks/useForm';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import Image from 'next/image';
 import React from 'react';
 
 export const Actions = () => {
+  const { form, onChangeHandler } = useForm();
+  const { handleResponse, items } = useFetch();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleResponse(form);
+  };
   return (
     <section className="col-start-1 col-end-4 pb-20 bg-primary-flashWhite min-h-screen mt-40 lg:mt-0 md:px-[165px] lg:pb-32 md:max-h-fit">
       <div className="relative">
-        <form className="absolute rounded-[10px] bg-no-repeat top-[-80px] left-0 right-0 mx-auto flex flex-col gap-4 bg-primary-jacarta w-[327px] min-h-[160px] overflow-hidden p-6 sm:w-full sm:max-w-[1110px] sm:flex-row sm:items-center">
+        <form
+          onSubmit={handleSubmit}
+          className="absolute rounded-[10px] bg-no-repeat top-[-80px] left-0 right-0 mx-auto flex flex-col gap-4 bg-primary-jacarta w-[327px] min-h-[160px] overflow-hidden p-6 sm:w-full sm:max-w-[1110px] sm:flex-row sm:items-center"
+        >
           <Input
             placeholder="Shorten a link here..."
             otherClassName="sm:w-full sm:h-[64px]"
+            onChange={(e) => onChangeHandler(e)}
+            name="url"
           />
           <Button
             label="Shorten It!"
