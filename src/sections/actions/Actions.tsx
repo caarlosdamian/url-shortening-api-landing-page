@@ -2,6 +2,7 @@
 import { Button, Card, Feature, Input } from '@/components';
 import { sampleFeature } from '@/constants';
 import { Link } from '@/constants/types';
+import { useClipBoard } from '@/hooks/useClipBoard';
 import { useFetch } from '@/hooks/useFetch';
 import { useForm } from '@/hooks/useForm';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
@@ -12,6 +13,7 @@ export const Actions = () => {
   const { form, onChangeHandler } = useForm();
   const [value, setValue] = useLocalStorage({ key: 'items', initValue: [] });
   const { handleResponse } = useFetch(setValue);
+  const {handleCopy} = useClipBoard({ setNewValue: setValue, currentValue: value });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,7 +68,7 @@ export const Actions = () => {
       <div className="w-full pt-[128px] flex flex-col gap-12 break-words px-6 md:gap-32 md:items-center">
         <div className="flex flex-col gap-6 w-full">
           {value.map((link: Link) => (
-            <Card key={link.id} {...link} />
+            <Card key={link.id} item={link} handleCopy={handleCopy} />
           ))}
         </div>
         <section
