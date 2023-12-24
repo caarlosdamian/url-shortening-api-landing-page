@@ -10,7 +10,10 @@ export const useLocalStorage = ({
 }) => {
   const [value, setValue] = useState(() => {
     try {
-      const storedValue = window.localStorage.getItem(key);
+      const storedValue =
+        typeof window !== 'undefined'
+          ? window.localStorage.getItem(key)
+          : undefined;
       return storedValue ? JSON.parse(storedValue) : initValue;
     } catch (error) {
       console.error(error);
@@ -20,7 +23,8 @@ export const useLocalStorage = ({
 
   useEffect(() => {
     try {
-      window.localStorage.setItem(key, JSON.stringify(value));
+      typeof window !== 'undefined' &&
+        window.localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
       console.error(error);
     }
