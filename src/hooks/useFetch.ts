@@ -1,9 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, useState } from 'react';
 
-export const useFetch = () => {
-  const [items, setItems] = useState<{ [key: string]: any }[]>([]);
+export const useFetch = (setItems: Dispatch<any>) => {
   const handleResponse = async (body: any) => {
     const url =
       process.env.API_LINK || 'https://is.gd/create.php?format=json&url=';
@@ -16,6 +15,8 @@ export const useFetch = () => {
         {
           id: `${prev.length + 1}-${data.shorturl}`,
           url: data.shorturl,
+          shortUrl: body.url,
+          isCopy: true,
         },
       ]);
       return data;
@@ -24,5 +25,5 @@ export const useFetch = () => {
     }
   };
 
-  return { handleResponse, items };
+  return { handleResponse };
 };

@@ -1,21 +1,34 @@
 'use client';
 import { Button, Card, Feature, Input } from '@/components';
-import { sampleFeature, sampleLinks } from '@/constants';
+import { sampleFeature } from '@/constants';
 import { Link } from '@/constants/types';
 import { useFetch } from '@/hooks/useFetch';
 import { useForm } from '@/hooks/useForm';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import Image from 'next/image';
-import React from 'react';
+import { useEffect } from 'react';
 
 export const Actions = () => {
   const { form, onChangeHandler } = useForm();
-  const { handleResponse, items } = useFetch();
+  const [value, setValue] = useLocalStorage({ key: 'items', initValue: [] });
+  const { handleResponse } = useFetch(setValue);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     handleResponse(form);
   };
+
+  useEffect(() => {
+    return () => {
+      setValue(
+        value.map((item: Link) => {
+          return { ...item, isCopy: false };
+        })
+      );
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <section className="col-start-1 col-end-4 pb-20 bg-primary-flashWhite min-h-screen mt-40 lg:mt-0 md:px-[165px] lg:pb-32 md:max-h-fit">
       <div className="relative">
@@ -52,7 +65,7 @@ export const Actions = () => {
       </div>
       <div className="w-full pt-[128px] flex flex-col gap-12 break-words px-6 md:gap-32 md:items-center">
         <div className="flex flex-col gap-6 w-full">
-          {sampleLinks.map((link: Link) => (
+          {value.map((link: Link) => (
             <Card key={link.id} {...link} />
           ))}
         </div>
