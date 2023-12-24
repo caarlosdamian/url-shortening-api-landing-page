@@ -11,13 +11,13 @@ export const useFetch = (setItems: Dispatch<any>) => {
 
       const data = await res.json();
       setItems((prev: any) => [
-        ...prev,
         {
           id: `${prev.length + 1}-${data.shorturl}`,
           url: data.shorturl,
           shortUrl: body.url,
           isCopy: false,
         },
+        ...prev,
       ]);
       return data;
     } catch (error) {

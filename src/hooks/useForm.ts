@@ -10,8 +10,13 @@ export const useForm = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const resetForm = (key:string) => {
+    setForm((prev)=>({...prev,[key]:undefined}));
+  };
+
   return {
     onChangeHandler,
     form,
+    resetForm,
   };
 };

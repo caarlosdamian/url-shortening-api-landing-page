@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { Button, Card, Feature, Input } from '@/components';
 import { sampleFeature } from '@/constants';
 import { Link } from '@/constants/types';
@@ -7,17 +8,25 @@ import { useFetch } from '@/hooks/useFetch';
 import { useForm } from '@/hooks/useForm';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import Image from 'next/image';
-import { useEffect } from 'react';
 
 export const Actions = () => {
-  const { form, onChangeHandler } = useForm();
+  const [error, setError] = useState<string | null>(null);
+  const { form, onChangeHandler, resetForm } = useForm();
   const [value, setValue] = useLocalStorage({ key: 'items', initValue: [] });
   const { handleResponse } = useFetch(setValue);
-  const {handleCopy} = useClipBoard({ setNewValue: setValue, currentValue: value });
-
+  const { handleCopy } = useClipBoard({
+    setNewValue: setValue,
+    currentValue: value,
+  });
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleResponse(form);
+    setError(null);
+    if (form === undefined || form.url.length === 0) {
+      setError('Please add a link');
+    } else {
+      handleResponse(form);
+      resetForm('url');
+    }
   };
 
   useEffect(() => {
@@ -36,17 +45,21 @@ export const Actions = () => {
       <div className="relative">
         <form
           onSubmit={handleSubmit}
-          className="absolute rounded-[10px] bg-no-repeat top-[-80px] left-0 right-0 mx-auto flex flex-col gap-4 bg-primary-jacarta w-[327px] min-h-[160px] overflow-hidden p-6 sm:w-full sm:max-w-[1110px] sm:flex-row sm:items-center"
+          className="absolute items-center rounded-[10px] bg-no-repeat top-[-80px] left-0 right-0 mx-auto flex flex-col gap-4 bg-primary-jacarta w-[327px] min-h-[160px] overflow-hidden p-6 sm:w-full sm:max-w-[1110px] sm:flex-row sm:items-center"
         >
           <Input
             placeholder="Shorten a link here..."
             otherClassName="sm:w-full sm:h-[64px]"
             onChange={(e) => onChangeHandler(e)}
             name="url"
+            error={error}
+            type="url"
           />
           <Button
             label="Shorten It!"
-            otherClassNames="z-30 sm:max-w-[188px] sm:p-[18px] sm:min-h-[64px]"
+            otherClassNames={`z-30 sm:max-w-[188px] sm:p-[18px] sm:min-h-[64px] ${
+              error ? 'mb-[18px]' : ''
+            }`}
             type="submit"
           />
           <Image
@@ -67,7 +80,7 @@ export const Actions = () => {
       </div>
       <div className="w-full pt-[128px] flex flex-col gap-12 break-words px-6 md:gap-32 md:items-center">
         <div className="flex flex-col gap-6 w-full">
-          {value.map((link: Link) => (
+          {value.reverse().map((link: Link) => (
             <Card key={link.id} item={link} handleCopy={handleCopy} />
           ))}
         </div>
