@@ -11,6 +11,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'url-shortening-api-landing-page',
   description: 'Using api to short urls',
+  icons: '/vercel.ico',
 };
 
 export default function RootLayout({
